@@ -1,4 +1,4 @@
-baseURL = "https://prwiki-amo.netlify.app"
+baseURL = "https://prwikix-amo.netlify.app"
 disableLanguages = []
 disqusShortname = ""
 paginate = "6"
