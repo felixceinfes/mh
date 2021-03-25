@@ -1,162 +1,189 @@
-baseURL = "https://prwiki-amo.netlify.app"
-disableLanguages = []
-disqusShortname = ""
-paginate = "6"
-summaryLength = "15"
+################################# Default configuration ###################
+# provide your domain here
+baseURL = "https://examplesite.com/"
+# theme
 theme = "mh"
 themesDir = "../.."
-title = "Wiki AAMO"
-[Languages.en]
-contentDir = "content/english"
-copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
-home = "Home"
-languageCode = "en-us"
-languageName = "En"
-weight = 1
-[[Languages.en.menu.main]]
-name = "about"
-pre = "#"
-url = "about"
-weight = 1
-[[Languages.en.menu.main]]
-name = "services"
-pre = "#"
-url = "services"
-weight = 2
-[[Languages.en.menu.main]]
-name = "portfolio"
-pre = "#"
-url = "portfolio"
-weight = 3
-[[Languages.en.menu.main]]
-name = "team"
-pre = "#"
-url = "team"
-weight = 4
-[[Languages.en.menu.main]]
-name = "pricing"
-pre = "#"
-url = "pricing"
-weight = 5
-[[Languages.en.menu.main]]
-name = "blog"
-pre = "#"
-url = "blog"
-weight = 6
-[[Languages.en.menu.main]]
-name = "contact"
-pre = "#"
-url = "contact"
-weight = 7
-[[Languages.en.menu.main]]
-name = "themefisher"
-pre = ""
-url = "https://themefisher.com/"
-weight = 8
-[Languages.fr]
-contentDir = "content/french"
-copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
-home = "Accueil"
-languageCode = "fr-fr"
-languageName = "Fr"
-weight = 2
-[[Languages.fr.menu.main]]
-name = "sur"
-pre = "#"
-url = "about"
-weight = 1
-[[Languages.fr.menu.main]]
-name = "un service"
-pre = "#"
-url = "services"
-weight = 2
-[[Languages.fr.menu.main]]
-name = "portefeuille"
-pre = "#"
-url = "portfolio"
-weight = 3
-[[Languages.fr.menu.main]]
-name = "équipe"
-pre = "#"
-url = "team"
-weight = 4
-[[Languages.fr.menu.main]]
-name = "tarification"
-pre = "#"
-url = "pricing"
-weight = 5
-[[Languages.fr.menu.main]]
-name = "blog"
-pre = "#"
-url = "blog"
-weight = 6
-[[Languages.fr.menu.main]]
-name = "contact"
-pre = "#"
-url = "contact"
-weight = 7
-[[Languages.fr.menu.main]]
-name = "themefisher"
-pre = ""
-url = "https://themefisher.com/"
-weight = 8
+# site title
+title = "Dot"
+# disable language
+disableLanguages = []
+# google analytics
+googleAnalytics = "" # paste your analytics ID here. (Ex: UA-123-45)
+# unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+
+
+############################# Default Parameters ##########################
 [params]
-author = "Themefisher"
-description = "Responsive Multipurpose Parallax Hugo Template"
-google_analytics_id = ""
-logo = "images/logo.png"
-post_share = true
-[params.cookies]
-enable = false
-expire_days = 2
-[params.map]
-enable = false
-gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
-map_latitude = "51.5223477"
-map_longitude = "-0.1622023"
-map_marker = "images/marker.png"
-[[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
-[[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
-[[params.plugins.css]]
-link = "plugins/magnific-popup/magnific-popup.css"
-[[params.plugins.css]]
-link = "plugins/slick/slick.css"
-[[params.plugins.css]]
-link = "https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700&display=swap"
-[[params.plugins.js]]
-link = "plugins/jquery/jquery.min.js"
-[[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.min.js"
-[[params.plugins.js]]
-link = "plugins/slick/slick.min.js"
-[[params.plugins.js]]
-link = "plugins/shuffle/shuffle.min.js"
-[[params.plugins.js]]
-link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
-[[params.plugins.js]]
-link = "plugins/lazy-load/lozad.min.js"
-[[params.plugins.js]]
-link = "plugins/google-map/map.js"
-[params.preloader]
-enable = false
-preloader = "images/logo.png"
+# logo is for all page
+logo = ""
+# logo white is for homepage logo, you can use colorful logo too...
+logo_white = ""
+# when logo is empty, it will shown your site title
+
+# customize color
+primary_color = "#02007e"
+body_color = "#f9f9f9"
+text_color = "#636363"
+text_color_dark = "#242738"
+white_color = "#ffffff"
+light_color = "#f8f9fa"
+
+# font family
+font_family = "lato" # Choose font family from : https://fonts.google.com/
+
+# contact form action
+contact_form_action = "#" # contact form works with : https://formspree.io
+
+
+############################## social links ##############################
 [[params.social]]
-icon = "ti-facebook"
+icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
 link = "#"
+
 [[params.social]]
-icon = "ti-twitter-alt"
+icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
 link = "#"
+  
 [[params.social]]
-icon = "ti-youtube"
+icon = "ti-github" # themify icon pack : https://themify.me/themify-icons
 link = "#"
+  
 [[params.social]]
-icon = "ti-linkedin"
+icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
 link = "#"
-[[params.social]]
-icon = "ti-dribbble"
-link = "#"
-[[params.social]]
-icon = "ti-pinterest"
-link = "#"
+
+################################ English Language ######################
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+weight = 1
+copyright = "Copyright © 2020 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)"
+
+# banner
+[Languages.en.params.banner]
+title = "Support Center & Knowledge base"
+subtitle = "Find advice and answers from our support team fast or get in touch"
+bg_image = "images/banner.jpg"
+placeholder = "Have a question? Just ask here or enter terms"
+
+# call to action
+[Languages.en.params.cta]
+enable = true
+title = "Didn't find an answer to your question?"
+content = "Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam."
+# call to action button
+[Languages.en.params.cta.button]
+enable = true
+label = "contact us"
+link = "contact"
+
+
+################## english navigation #################
+[[Languages.en.menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[Languages.en.menu.main]]
+name = "Faq"
+url = "faq"
+weight = 2
+
+[[Languages.en.menu.main]]
+name = "contact"
+url = "contact"
+weight = 3
+
+# Dropdown menu
+[[Languages.en.menu.main]]
+weight = 4
+name = "docs"
+hasChildren = true
+
+  [[Languages.en.menu.main]]
+  parent = "docs"
+  name = "Installation"
+  url = "installation"
+  weight = 1
+
+  [[Languages.en.menu.main]]
+  parent = "docs"
+  name = "Billing and Pricing"
+  url = "billing-pricing"
+  weight = 2
+
+  [[Languages.en.menu.main]]
+  parent = "docs"
+  name = "Features"
+  url = "features"
+  weight = 3
+
+
+################################### Franch Language ######################
+[Languages.fr]
+languageName = "Fr"
+languageCode = "fr-fr"
+weight = 2
+copyright = "Copyright © 2020 un thème Hugo par [Gethugothemes](https://gethugothemes.com/)"
+
+# banner
+[Languages.fr.params.banner]
+title = "Comment pouvons nous aider?"
+subtitle = "Trouvez rapidement des conseils et des réponses auprès de notre équipe d'assistance ou contactez-nous."
+bg_image = "images/banner.jpg"
+placeholder = "Avoir une question? Il suffit de demander ici ou de saisir les termes"
+
+# call to action
+[Languages.fr.params.cta]
+enable = true
+title = "Vous n'avez pas trouvé de réponse à votre question?"
+content = "Contactez-nous pour plus de détails sur les services supplémentaires et la tarification du travail personnalisé"
+# call to action button
+[Languages.fr.params.cta.button]
+enable = true
+label = "Contactez nous"
+link = "contact"
+
+
+################## french navigation #################
+[[Languages.fr.menu.main]]
+name = "Accueil"
+url = "/"
+weight = 1
+
+[[Languages.fr.menu.main]]
+name = "Faq"
+url = "faq"
+weight = 2
+
+[[Languages.fr.menu.main]]
+name = "contact"
+url = "contact"
+weight = 3
+
+# Dropdown menu
+[[Languages.fr.menu.main]]
+weight = 4
+name = "docs"
+hasChildren = true
+
+  [[Languages.fr.menu.main]]
+  parent = "docs"
+  name = "Installation"
+  url = "installation"
+  weight = 1
+
+  [[Languages.fr.menu.main]]
+  parent = "docs"
+  name = "Billing and Pricing"
+  url = "billing-pricing"
+  weight = 2
+
+  [[Languages.fr.menu.main]]
+  parent = "docs"
+  name = "Features"
+  url = "features"
+  weight = 3

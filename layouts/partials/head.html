@@ -1,41 +1,59 @@
 <head>
-	<meta charset="utf-8">
-	<title>{{ .Title }}</title>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  {{ hugo.Generator }}
+  
+  {{ "<!-- ** CSS Plugins Needed for the Project ** -->" | safeHTML }}
+  
+  {{ "<!-- Bootstrap -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ `plugins/bootstrap/bootstrap.min.css` | absURL }}">
 
-	{{ "<!-- mobile responsive meta -->" | safeHTML }}
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
-	{{ with site.Params.author }}
-	<meta name="author" content="{{ . }}">{{ end }}
-	{{ hugo.Generator }}
+  {{ "<!-- themefy-icon -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ `plugins/themify-icons/themify-icons.css` | absURL }}">
 
-	{{ "<!-- plugins -->" | safeHTML }}
-	{{ range site.Params.plugins.css }}
-	<link rel="stylesheet" href="{{ .link | absURL }}">
-	{{ end }}
+  {{ "<!--Favicon-->" | safeHTML }}
+  <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
 
-	{{"<!-- Main Stylesheet -->"|safeHTML}}
-	{{ $styles := resources.Get "css/style.css" | minify }}
-	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  {{ "<!-- fonts -->" | safeHTML }}
+  <link href="https://fonts.googleapis.com/css?family={{replace .Site.Params.font_family ' ' '+' | title}}:300,400,700&display=swap" rel="stylesheet">
+  
+  <style>
+  :root{
+    --primary-color:{{ .Site.Params.primary_color }};
+    --body-color:{{ .Site.Params.body_color }};
+    --text-color:{{ .Site.Params.text_color }};
+    --text-color-dark:{{ .Site.Params.text_color_dark }};
+    --white-color:{{ .Site.Params.white_color }};
+    --light-color:{{ .Site.Params.light_color }};
+    --font-family:{{ replace .Site.Params.font_family ' ' '+' | title }};
+  }
+  </style>
 
-	{{"<!-- Custom stylesheet - for your changes -->" |safeHTML}}
-	{{ $custom := resources.Get "css/custom.css" | minify }}
-  <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
+{{ "<!-- Main Stylesheet -->" | safeHTML }}
+{{ $css := resources.Get "css/style.css" | minify }}
+<link href="{{ $css.Permalink }}" rel="stylesheet" media="screen"/>
+  
+{{ "<!-- ** JS Plugins Needed for the Project ** -->" | safeHTML }}
 
-	{{ "<!--Favicon-->" | safeHTML }}
-	<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
-	<link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+{{ "<!-- jquiry -->" | safeHTML }}
+<script src="{{ `plugins/jquery/jquery-1.12.4.js` | absURL }}"></script>
 
-	{{ with site.Params.google_analytics_id }}
-	{{ "<!-- Global Site Tag (gtag.js) - Google Analytics -->" | safeHTML }}
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+{{ "<!-- jquary ui -->" | safeHTML }}
+<script src="{{ `plugins/jquery/jquery-ui.js`| absURL }}"></script>
 
-	  gtag('config', '{{ . }}');
-	</script>
-	{{ end }}
+{{ "<!-- Bootstrap JS -->" | safeHTML }}
+<script src="{{ `plugins/bootstrap/bootstrap.min.js` | absURL }}"></script>
+
+{{ "<!-- match-height JS -->" | safeHTML }}
+<script src="{{ `plugins/match-height/jquery.matchHeight-min.js` | absURL }}"></script>
+
+{{ template "_internal/google_analytics.html" . }}
+  
+{{ if templates.Exists ( printf "partials/overrides/header.html" ) }}
+  {{ partial "partials/overrides/header.html" . }}
+{{ else }}
+  {{ "<!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->" | safeHTML }}
+{{ end }}
 
 </head>

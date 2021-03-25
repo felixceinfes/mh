@@ -1,146 +1,130 @@
-/* ========================================================================= */
-/*	Page Preloader
-/* ========================================================================= */
+(function ($) {
+  'use strict';
 
-$(window).on('load', function () {
-	$('.preloader').fadeOut(100);
-});
-
-jQuery(function ($) {
-	"use strict";
-
-	/* ========================================================================= */
-	/*	lazy load initialize
-	/* ========================================================================= */
-
-	const observer = lozad(); // lazy loads elements with default selector as ".lozad"
-	observer.observe();
-
-	/* ========================================================================= */
-	/*	Magnific popup
-	/* =========================================================================  */
-	$('.image-popup').magnificPopup({
-		type: 'image',
-		removalDelay: 160, //delay removal by X to allow out-animation
-		callbacks: {
-			beforeOpen: function () {
-				// just a hack that adds mfp-anim class to markup
-				this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-				this.st.mainClass = this.st.el.attr('data-effect');
-			}
-		},
-		closeOnContentClick: true,
-		midClick: true,
-		fixedContentPos: false,
-		fixedBgPos: true
-	});
-
-	/* ========================================================================= */
-	/*	Portfolio Filtering Hook
-	/* =========================================================================  */
-
-	var containerEl = document.querySelector('.shuffle-wrapper');
-	if (containerEl) {
-		var Shuffle = window.Shuffle;
-		var myShuffle = new Shuffle(document.querySelector('.shuffle-wrapper'), {
-			itemSelector: '.shuffle-item',
-			buffer: 1
-		});
-
-		jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
-			var input = evt.currentTarget;
-			if (input.checked) {
-				myShuffle.filter(input.value);
-			}
-		});
-	}
-
-	/* ========================================================================= */
-	/*	Testimonial Carousel
-	/* =========================================================================  */
-
-	$("#testimonials").slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 4000
-	});
-
-	/* ========================================================================= */
-	/*	animation scroll js
-	/* ========================================================================= */
+  // Background-images
+  $('[data-background]').each(function () {
+    $(this).css({
+      'background-image': 'url(' + $(this).data('background') + ')'
+    });
+  });
 
 
+  // Accordions
+  $('.collapse').on('shown.bs.collapse', function () {
+    $(this).parent().find('.ti-plus').removeClass('ti-plus').addClass('ti-minus');
+  }).on('hidden.bs.collapse', function () {
+    $(this).parent().find('.ti-minus').removeClass('ti-minus').addClass('ti-plus');
+  });
 
-	function myFunction(x) {
-		if (x.matches) {
-			var topOf = 50
-		} else {
-			var topOf = 350
-		}
-	}
 
-	var html_body = $('html, body');
-	$('nav a, .page-scroll').on('click', function () { //use page-scroll class in any HTML tag for scrolling
-		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-			if (target.length) {
-				html_body.animate({
-					scrollTop: target.offset().top - 50
-				}, 1500, 'easeInOutExpo');
-				return false;
-			}
-		}
-	});
+  // match height
+  $(function () {
+    $('.match-height').matchHeight({
+      byRow: true,
+      property: 'height',
+      target: null,
+      remove: false
+    });
+  });
 
-	// easeInOutExpo Declaration
-	jQuery.extend(jQuery.easing, {
-		easeInOutExpo: function (x, t, b, c, d) {
-			if (t === 0) {
-				return b;
-			}
-			if (t === d) {
-				return b + c;
-			}
-			if ((t /= d / 2) < 1) {
-				return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
-			}
-			return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
-		}
-	});
+  // Get Parameters from some url
+  var getUrlParameter = function getUrlParameter(sPageURL) {
+    var url = sPageURL.split('?');
+    var obj = {};
+    if (url.length == 2) {
+      var sURLVariables = url[1].split('&'),
+        sParameterName,
+        i;
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        obj[sParameterName[0]] = sParameterName[1];
+      }
+      return obj;
+    } else {
+      return undefined;
+    }
+  };
 
-	/* ========================================================================= */
-	/*	counter up
-	/* ========================================================================= */
-	function counter() {
-		var oTop;
-		if ($('.count').length !== 0) {
-			oTop = $('.count').offset().top - window.innerHeight;
-		}
-		if ($(window).scrollTop() > oTop) {
-			$('.count').each(function () {
-				var $this = $(this),
-					countTo = $this.attr('data-count');
-				$({
-					countNum: $this.text()
-				}).animate({
-					countNum: countTo
-				}, {
-					duration: 1000,
-					easing: 'swing',
-					step: function () {
-						$this.text(Math.floor(this.countNum));
-					},
-					complete: function () {
-						$this.text(this.countNum);
-					}
-				});
-			});
-		}
-	}
-	$(window).on('scroll', function () {
-		counter();
-	});
+  // Execute actions on images generated from Markdown pages
+  var images = $(".content img").not(".inline");
+  // Wrap image inside a featherlight (to get a full size view in a popup)
+  images.wrap(function () {
+    var image = $(this);
+    if (!image.parent("a").length) {
+      return "<a href='" + image[0].src + "' data-featherlight='image'></a>";
+    }
+  });
 
-});
+  // Change styles, depending on parameters set to the image
+  images.each(function (index) {
+    var image = $(this)
+    var o = getUrlParameter(image[0].src);
+    if (typeof o !== "undefined") {
+      var h = o["height"];
+      var w = o["width"];
+      var c = o["classes"];
+      image.css("width", function () {
+        if (typeof w !== "undefined") {
+          return w;
+        } else {
+          return "auto";
+        }
+      });
+      image.css("height", function () {
+        if (typeof h !== "undefined") {
+          return h;
+        } else {
+          return "auto";
+        }
+      });
+      if (typeof c !== "undefined") {
+        var classes = c.split(',');
+        for (i = 0; i < classes.length; i++) {
+          image.addClass(classes[i]);
+        }
+      }
+    }
+  });
+
+
+  // tab
+  $('.tab-content').find('.tab-pane').each(function (idx, item) {
+    var navTabs = $(this).closest('.code-tabs').find('.nav-tabs'),
+      title = $(this).attr('title');
+    navTabs.append('<li class="nav-item"><a class="nav-link" href="#">' + title + '</a></li>');
+  });
+
+  $('.code-tabs ul.nav-tabs').each(function () {
+    $(this).find("li:first").addClass('active');
+  })
+
+  $('.code-tabs .tab-content').each(function () {
+    $(this).find("div:first").addClass('active');
+  });
+
+  $('.nav-tabs a').click(function (e) {
+    e.preventDefault();
+    var tab = $(this).parent(),
+      tabIndex = tab.index(),
+      tabPanel = $(this).closest('.code-tabs'),
+      tabPane = tabPanel.find('.tab-pane').eq(tabIndex);
+    tabPanel.find('.active').removeClass('active');
+    tab.addClass('active');
+    tabPane.addClass('active');
+  });
+
+
+
+  // search
+  $('#search').keyup(function () {
+    if (this.value) {
+      $(this).addClass('active')
+    } else {
+      $(this).removeClass('active')
+    }
+  })
+  $('#search').focusout(function () {
+    $(this).removeClass('active')
+  })
+
+})(jQuery);
