@@ -54,9 +54,9 @@ url = "subforest"
 weight = "4"
 [Languages.en.params.banner]
 bg_image = "images/banner.jpg"
-placeholder = "Have a question? Just ask here or enter terms"
-subtitle = "Find advice and answers from our support team fast or get in touch"
-title = "Support Center & Knowledge base"
+placeholder = "Tiene alguna pregunta? Simplemente haga una búsqueda"
+subtitle = "Busque respuestas a travéz del equipo"
+title = "Centro de soporte y conocimiento"
 [Languages.en.params.cta]
 content = "Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam."
 enable = true
