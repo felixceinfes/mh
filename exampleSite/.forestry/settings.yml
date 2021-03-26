@@ -40,7 +40,7 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: exampleSite/content
+  path: exampleSite/content/pages
   label: Pages
   create: all
   match: "*"
