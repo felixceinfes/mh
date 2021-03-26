@@ -5,6 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: exampleSite/content/subforest
+  label: subfolder forestry
+  create: all
+  match: "**/*"
+- type: directory
   path: exampleSite/content/billing-pricing
   label: Billing pricing
   create: all
