@@ -8,10 +8,12 @@ title = "Dot"
 copyright = "Copyright © 2020 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)"
 languageCode = "en-us"
 languageName = "En"
+parent = ""
 weight = 1
 [[Languages.en.menu.main]]
 name = "Home"
 url = "/"
+parent = ""
 weight = 1
 [[Languages.en.menu.main]]
 name = "Faq"
