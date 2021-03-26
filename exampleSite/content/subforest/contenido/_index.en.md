@@ -2,10 +2,9 @@
 date = 2021-03-18T05:00:00Z
 description = "descripción título"
 icon = ""
+keywords = ["subfolder", "forestry"]
 title = "Titulo"
 type = "document"
-draft= false
-# search related keywords
-keywords= ["subfolder","forestry"]
+
 +++
-Algún texto
+Algún texto descriprivo
