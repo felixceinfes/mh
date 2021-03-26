@@ -1,7 +1,6 @@
 +++
 date = 2021-03-02T05:00:00Z
 description = "Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet"
-draft = true
 icon = "ti-credit-card"
 title = "Subfolder Forestry"
 type = "docs"
