@@ -18,5 +18,3 @@ fields:
 - type: text
   name: type
   label: type
-pages:
-- exampleSite/content/titulo-1.toml
