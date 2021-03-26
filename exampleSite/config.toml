@@ -40,6 +40,10 @@ name = "Features"
 parent = "docs"
 url = "features"
 weight = 3
+[[Languages.en.menu.main]]
+name = "Submenu desde forestry"
+url = ""
+weight = "4"
 [Languages.en.params.banner]
 bg_image = "images/banner.jpg"
 placeholder = "Have a question? Just ask here or enter terms"
