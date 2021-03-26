@@ -65,60 +65,6 @@ title = "Didn't find an answer to your question?"
 enable = true
 label = "contact us"
 link = "contact"
-[Languages.fr]
-copyright = "Copyright © 2020 un thème Hugo par [Gethugothemes](https://gethugothemes.com/)"
-languageCode = "fr-fr"
-languageName = "Fr"
-weight = 2
-[[Languages.fr.menu.main]]
-name = "Accueil"
-url = "/"
-weight = 1
-[[Languages.fr.menu.main]]
-name = "Faq"
-url = "faq"
-weight = 2
-[[Languages.fr.menu.main]]
-name = "contact"
-url = "contact"
-weight = 3
-[[Languages.fr.menu.main]]
-hasChildren = true
-name = "docs"
-weight = 4
-[[Languages.fr.menu.main]]
-name = "Installation"
-parent = "docs"
-url = "installation"
-weight = 1
-[[Languages.fr.menu.main]]
-name = "Billing and Pricing"
-parent = "docs"
-url = "billing-pricing"
-weight = 2
-[[Languages.fr.menu.main]]
-name = "Features"
-parent = "docs"
-url = "features"
-weight = 3
-[Languages.fr.params.banner]
-bg_image = "images/banner.jpg"
-placeholder = "Avoir une question? Il suffit de demander ici ou de saisir les termes"
-subtitle = "Trouvez rapidement des conseils et des réponses auprès de notre équipe d'assistance ou contactez-nous."
-title = "Comment pouvons nous aider?"
-[Languages.fr.params.cta]
-content = "Contactez-nous pour plus de détails sur les services supplémentaires et la tarification du travail personnalisé"
-enable = true
-title = "Vous n'avez pas trouvé de réponse à votre question?"
-[Languages.fr.params.cta.button]
-enable = true
-label = "Contactez nous"
-link = "contact"
-[markup.goldmark.renderer]
-unsafe = true
-
-####
-
 [Languages.es]
 copyright = "Copyright © 2020 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)"
 languageCode = "en-us"
@@ -180,11 +126,59 @@ title = "Didn't find an answer to your question?"
 enable = true
 label = "contact us"
 link = "contact"
-
-####
-
+[Languages.fr]
+copyright = "Copyright © 2020 un thème Hugo par [Gethugothemes](https://gethugothemes.com/)"
+languageCode = "fr-fr"
+languageName = "Fr"
+weight = 2
+[[Languages.fr.menu.main]]
+name = "Accueil"
+url = "/"
+weight = 1
+[[Languages.fr.menu.main]]
+name = "Faq"
+url = "faq"
+weight = 2
+[[Languages.fr.menu.main]]
+name = "contact"
+url = "contact"
+weight = 3
+[[Languages.fr.menu.main]]
+hasChildren = true
+name = "docs"
+weight = 4
+[[Languages.fr.menu.main]]
+name = "Installation"
+parent = "docs"
+url = "installation"
+weight = 1
+[[Languages.fr.menu.main]]
+name = "Billing and Pricing"
+parent = "docs"
+url = "billing-pricing"
+weight = 2
+[[Languages.fr.menu.main]]
+name = "Features"
+parent = "docs"
+url = "features"
+weight = 3
+[Languages.fr.params.banner]
+bg_image = "images/banner.jpg"
+placeholder = "Avoir une question? Il suffit de demander ici ou de saisir les termes"
+subtitle = "Trouvez rapidement des conseils et des réponses auprès de notre équipe d'assistance ou contactez-nous."
+title = "Comment pouvons nous aider?"
+[Languages.fr.params.cta]
+content = "Contactez-nous pour plus de détails sur les services supplémentaires et la tarification du travail personnalisé"
+enable = true
+title = "Vous n'avez pas trouvé de réponse à votre question?"
+[Languages.fr.params.cta.button]
+enable = true
+label = "Contactez nous"
+link = "contact"
+[markup.goldmark.renderer]
+unsafe = true
 [params]
-body_color = "#f9f9f9"
+body_color = "#14415b"
 contact_form_action = "#"
 font_family = "lato"
 light_color = "#f8f9fa"
