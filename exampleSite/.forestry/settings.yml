@@ -44,7 +44,9 @@ sections:
   label: Pages
   create: all
   match: "*"
-  new_doc_ext: toml
+  new_doc_ext: md
+  templates:
+  - test-template
 upload_dir: exampleSite/static/uploads
 public_path: "/uploads"
 front_matter_path: ''
