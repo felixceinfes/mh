@@ -116,6 +116,73 @@ label = "Contactez nous"
 link = "contact"
 [markup.goldmark.renderer]
 unsafe = true
+
+####
+
+[Languages.es]
+copyright = "Copyright © 2020 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)"
+languageCode = "en-us"
+languageName = "En"
+parent = ""
+weight = 1
+[[Languages.es.menu.main]]
+name = ""
+parent = ""
+url = ""
+weight = ""
+[[Languages.es.menu.main]]
+name = "Home"
+parent = ""
+url = "/"
+weight = 1
+[[Languages.es.menu.main]]
+name = "Faq"
+url = "faq"
+weight = 2
+[[Languages.es.menu.main]]
+name = "contact"
+url = "contact"
+weight = 3
+[[Languages.es.menu.main]]
+hasChildren = true
+name = "docs"
+weight = 4
+[[Languages.es.menu.main]]
+name = "Installation"
+parent = "docs"
+url = "installation"
+weight = 1
+[[Languages.es.menu.main]]
+name = "Billing and Pricing"
+parent = "docs"
+url = "billing-pricing"
+weight = 2
+[[Languages.es.menu.main]]
+name = "Features"
+parent = "docs"
+url = "features"
+weight = "3"
+[[Languages.es.menu.main]]
+name = "Submenu desde forestry"
+parent = "docs"
+url = "subforest"
+weight = "4"
+[Languages.es.params.banner]
+bg_image = "images/banner.jpg"
+placeholder = "Have a question? Just ask here or enter terms"
+subtitle = "Find advice and answers from our support team fast or get in touch"
+title = "Support Center & Knowledge base"
+[Languages.es.params.cta]
+content = "Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam."
+enable = true
+title = "Didn't find an answer to your question?"
+[Languages.es.params.cta.button]
+enable = true
+label = "contact us"
+link = "contact"
+
+####
+
 [params]
 body_color = "#f9f9f9"
 contact_form_action = "#"
