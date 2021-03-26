@@ -43,7 +43,7 @@ weight = "3"
 name = "Features"
 parent = "docs"
 url = "features"
-weight = 3
+weight = "4"
 [Languages.en.params.banner]
 bg_image = "images/banner.jpg"
 placeholder = "Have a question? Just ask here or enter terms"
