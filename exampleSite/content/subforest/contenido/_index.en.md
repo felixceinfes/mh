@@ -5,7 +5,5 @@ icon = ""
 title = "Titulo"
 type = "document"
 draft: false
-# search related keywords
-keywords: ["subfolder","forestry"]
 +++
 Algún texto
