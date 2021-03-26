@@ -36,14 +36,14 @@ parent = "docs"
 url = "billing-pricing"
 weight = 2
 [[Languages.en.menu.main]]
+name = "Submenu desde forestry"
+url = "subforest"
+weight = "3"
+[[Languages.en.menu.main]]
 name = "Features"
 parent = "docs"
 url = "features"
 weight = 3
-[[Languages.en.menu.main]]
-name = "Submenu desde forestry"
-url = "subforest"
-weight = "4"
 [Languages.en.params.banner]
 bg_image = "images/banner.jpg"
 placeholder = "Have a question? Just ask here or enter terms"
