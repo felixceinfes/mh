@@ -19,4 +19,4 @@ fields:
   name: type
   label: type
 pages:
-- exampleSite/content/subforest/subfolder-forestry.md
+- exampleSite/content/subforest/__index.en.md
