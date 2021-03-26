@@ -47,6 +47,14 @@ sections:
   new_doc_ext: md
   templates:
   - test-template
+- type: heading
+  label: Configuration
+- type: directory
+  path: exampleSite
+  label: Configuration
+  create: all
+  match: "*.toml"
+  new_doc_ext: toml
 upload_dir: exampleSite/static/uploads
 public_path: "/uploads"
 front_matter_path: ''
