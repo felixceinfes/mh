@@ -1,41 +1,41 @@
 ---
-title: "Understand the different levels of profile"
-date: 2018-12-29T11:02:05+06:00
-lastmod: 2020-01-05T10:42:26+06:00
-weight: 5
-draft: false
-# search related keywords
-keywords: [""]
----
+title: Understand the different levels of profile
+date: 2018-12-29T11:02:05.000+06:00
+lastmod: 2020-01-05T10:42:26.000+06:00
+weight: "5"
+keywords:
+- ''
 
+---
 Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.
 
 {{< notice note >}}
-  This is a simple note.
+This is a simple note.
 {{</ notice >}}
 
 {{< notice tip >}}
-  This is a simple tip.
+This is a simple tip.
 {{</ notice >}}
 
 {{< notice info >}}
-  This is a simple info.
+This is a simple info.
 {{</ notice >}}
 
-
 {{< tabs >}}
-  {{< tab "first" >}}
-   This is first tab
-  {{</ tab >}}
+{{< tab "first" >}}
+This is first tab
+{{</ tab >}}
 
-  {{< tab "second" >}}
-  this is second tab
-  {{</ tab >}}
+{{< tab "second" >}}
+this is second tab
+{{</ tab >}}
 
-  {{< tab "third" >}}
-  this is third tab
-  {{</ tab >}}
+{{< tab "third" >}}
+this is third tab
+{{</ tab >}}
 {{</ tabs >}}
+
+{{< youtube Srt3lTmRxzQ >}}
 
 Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla. Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit.
 
